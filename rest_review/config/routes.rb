@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root 'restaurants#index'
+  resources :restaurants
   resources :sessions, only: [:new, :create, :destroy]
   resources :users, except: [:index, :destroy]
   get "/register", to: "users#new"

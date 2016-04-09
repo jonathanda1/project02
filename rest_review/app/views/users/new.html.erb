@@ -1,3 +1,8 @@
+<ul class="nav nav-pills">
+  <li role="presentation" class="active"><a href="/">Home</a></li>
+  <li role="presentation"><a href=""></a></li>
+  <li role="presentation"><a href=""></a></li>
+</ul>
 <h1>Register User</h1>
 
 <%= form_for @user do |f| %>
@@ -5,14 +10,20 @@
         <div><%= msg %></div>
     <% end %>
 
- <div class = 'col-lg-4'><%= f.label :email %>
-      <%= f.email_field :email %> </div>
+  <div class = 'col-md-12'>
+    <%= f.label :email %>
+    <%= f.email_field :email %>
+  </div>
 
-<div class = 'col-lg-4'><%= f.label :password %>
-    <%= f.password_field :password %></div>
+  <div class = 'col-md-12'>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </div>
 
-<div class = 'col-lg-4'><%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %> </div>
+  <div class = 'col-md-12'>
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation %>
+  </div>
 
    <%= f.submit  "Register" %>
 <% end %>

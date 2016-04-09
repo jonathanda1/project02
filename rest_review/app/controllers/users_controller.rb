@@ -3,10 +3,11 @@ class UsersController < ApplicationController
       user = User.new(user_params)
       if user.save
         flash[:success] = 'You are registered!'
-        redirect_to user_path user.id
+        session[:user_id] = @user.id
+        redirect_to root_path
       else
         flash[:error] = 'Registration has failed!'
-        redirect_to new_user_path
+        render 'new'
       end
     end
 
