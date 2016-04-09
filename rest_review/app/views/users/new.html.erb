@@ -1,0 +1,18 @@
+<h1>Register User</h1>
+
+<%= form_for @user do |f| %>
+    <% flash.each do |key, msg| %>
+        <div><%= msg %></div>
+    <% end %>
+
+ <div class = 'col-lg-4'><%= f.label :email %>
+      <%= f.email_field :email %> </div>
+
+<div class = 'col-lg-4'><%= f.label :password %>
+    <%= f.password_field :password %></div>
+
+<div class = 'col-lg-4'><%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation %> </div>
+
+   <%= f.submit  "Register" %>
+<% end %>
