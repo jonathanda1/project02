@@ -1,2 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Restaurant Review</title>
+</head>
+<body>
+  <h1 class = "col-md-offset-4 col-md-7"> RR..<small> your Restaurant Review <small></h1>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <div> <% @restaurants.each do |restaurant| %>
+              <%= restaurant.name %>
+              <%= link_to 'Show', restaurant %> </div>
+        <% end %>
 
-this should be the front page
+
+
+</body>
+</html>
+
