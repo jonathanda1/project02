@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:email])
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-      flash[:success] = 'You are logged in!'
+      flash[:success] = 'You are logged in! Welcome to Restaurant Review'
       redirect_to root_path
     else
       flash[:error] = 'Invalid login credentials - try again!'

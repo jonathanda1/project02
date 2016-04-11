@@ -11,9 +11,9 @@
   <br>
   <br>
   <br>
-  <div> <% @restaurants.each do |restaurant| %>
-              <%= restaurant.name %>
-              <%= link_to 'Show', restaurant %> </div>
+  <div class = 'col-md-12'> <% @restaurants.each do |restaurant| %> </div>
+  <div class = 'col-md-12'>            <%= restaurant.name %> </div>
+  <div class = 'col-md-12'>            <%= link_to 'Show', restaurant %> </div>
         <% end %>
 
 
