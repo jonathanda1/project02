@@ -12,9 +12,9 @@ class CommentsController < ApplicationController
   end
 
   def create
-    @comment = Comment.new(params.require(:comment).permit(:content))
+    @comment = Comment.new(params.require(:comment).permit(:content, :restaurant_id))
     if @comment.save
-      redirect_to comments_path
+      redirect_to restaurant_path(@comment.restaurant)
     else
       render :new
     end
@@ -26,7 +26,7 @@ class CommentsController < ApplicationController
 
   def update
     @comment = Comment.find(params[:id])
-    @comment.update_attributes(params.require(:comment).permit(:content))
+    @comment.update_attributes(params.require(:comment).permit(:content, :restaurant_id))
     if @course.save
       redirect_to courses_path
     else

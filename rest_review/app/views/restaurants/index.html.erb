@@ -5,13 +5,13 @@
     <title>Restaurant Review</title>
 </head>
 <body>
-  <h1 class = "col-md-offset-4 col-md-7"> RR..<small> your Restaurant Review <small></h1>
+  <h1 class = "col-md-offset-4 col-md-7"> RR..<small> your Restaurant Review </small></h1>
   <br>
   <br>
   <br>
   <br>
   <br>
-            <p>   <% @restaurants.each do |restaurant| %> </p>
+               <% @restaurants.each do |restaurant| %>
             <p>       <%= restaurant.name %>
                       <%= link_to 'More Info', restaurant %> </p>
         <% end %>

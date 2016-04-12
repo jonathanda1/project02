@@ -28,7 +28,9 @@
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
+          <% if current_user %>
       <li><a href="restaurants/new">Add a new restaurant</a></li>
+          <% end %>
       <form class="navbar-form navbar-left" role="search">
         <div class="form-group">
           <input type="text" class="form-control" placeholder="Search">

@@ -1,6 +1,6 @@
 <h1> <%= @restaurant.name %> </h1>
 
-<p class= 'col-md-12'> Located in <%=@restaurant.location %>, <%=@restaurant.name %> serves an <%=@restaurant.cuisine %> cuisine. Below is a description of the restaurant.
+<p class= 'col-md-offset-0 col-md-5'> Located in <%=@restaurant.location %>, <%=@restaurant.name %> serves an <%=@restaurant.cuisine %> cuisine.
 </p>
 
 <br>
@@ -13,7 +13,28 @@
 
 <div class='col-md-12'><%= link_to "Home", restaurants_path %></div>
 
-
 <h2> Comments </h2>
+
+<p>   <% @restaurant.comments.each do |comment| %> </p>
+            <p>  <%= comment.content %> </p>
+
+        <% end %>
+
+
+<%= form_for @restaurant.comments.build do |f| %>
+    <%= f.hidden_field :restaurant_id %>
+    <div>
+        <%= f.label :content %>
+        <%= f.text_field :content %>
+    </div>
+
+
+
+    <%= f.submit "Comment" %>
+
+<% end %>
+
+
+
 
 

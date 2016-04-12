@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :restaurants
   resources :sessions, only: [:new, :create, :destroy]
   resources :users, except: [:index, :destroy]
+  resources :comments
   get "/register", to: "users#new"
   get "/login", to: "sessions#new"
 
