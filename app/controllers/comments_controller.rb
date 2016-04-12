@@ -40,7 +40,7 @@ class CommentsController < ApplicationController
   def destroy
     @comment.user = current_user
     @comment.destroy
-    redirect_to comments_path
+    redirect_to restaurants_path
   end
 
 private
@@ -52,5 +52,6 @@ private
   def only_my_comments
       redirect_to root_path, notice: "you can't edit someone elses comments" if (current_user != @comment.user)
   end
+
 
 end
