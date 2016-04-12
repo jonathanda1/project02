@@ -1,4 +1,6 @@
 class RestaurantsController < ApplicationController
+  before_action :authorize, except: [:index, :show]
+
    def index
     @restaurants = Restaurant.all.order(:name)
   end
