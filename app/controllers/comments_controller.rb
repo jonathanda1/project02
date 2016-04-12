@@ -27,8 +27,8 @@ class CommentsController < ApplicationController
   def update
     @comment = Comment.find(params[:id])
     @comment.update_attributes(params.require(:comment).permit(:content, :restaurant_id))
-    if @course.save
-      redirect_to courses_path
+    if @comment.save
+      redirect_to restaurant_path(@comment.restaurant)
     else
       render :new
     end
