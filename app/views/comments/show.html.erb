@@ -14,3 +14,5 @@
 
 <div><%= link_to "Edit this Comment", edit_comment_path(@comment) %></div>
 
+<div><%= link_to "Delete this Comment", comment_path, method: :delete, data: { confirm: "Are you sure?"} %> </div>
+

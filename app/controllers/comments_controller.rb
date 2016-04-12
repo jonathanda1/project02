@@ -17,6 +17,7 @@ class CommentsController < ApplicationController
 
   def create
     @comment = Comment.new(params.require(:comment).permit(:content, :restaurant_id))
+    @comment.user = current_user
     if @comment.save
       redirect_to restaurant_path(@comment.restaurant)
     else
@@ -28,7 +29,7 @@ class CommentsController < ApplicationController
   end
 
   def update
-    @comment.update_attributes(params.require(:comment).permit(:content, :restaurant_id))
+    @comment.update_attributes(params.require(:comment).permit(:content, :user_id, :restaurant_id))
     if @comment.save
       redirect_to restaurant_path(@comment.restaurant)
     else
@@ -37,6 +38,7 @@ class CommentsController < ApplicationController
   end
 
   def destroy
+    @comment.user = current_user
     @comment.destroy
     redirect_to comments_path
   end
