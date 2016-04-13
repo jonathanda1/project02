@@ -6,7 +6,9 @@
 
 
 <%= @comment.content %>
-
+<% if @comment.image.present? %>
+                <%= image_tag @comment.image.url(:large) %>
+                <% end %>
 <br>
 <br>
 <br>

@@ -1,9 +1,19 @@
 // Place all the styles related to the Restaurants controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
-body{
+body.restaurants {
 background: transparent url('http://kierstenfrase.com/wp-content/uploads/2014/07/il_fullxfull.623832860_fhbi.jpg');
 background-size: 100%;
-font-weight: bolder;
+}
+
+
+body.sessions {
+background: transparent url('http://www.bbc.co.uk/staticarchive/9727e8524c1fb2d60c1011177fd8a6bfd9ff59d5.jpg');
+background-size: 100%;
+text-align: center;
+}
+
+body.users {
+  background: transparent url('http://41.media.tumblr.com/1389a70305c137b49cb6f086e7652010/tumblr_njq5f9mXPp1r1thfzo3_1280.jpg');
+  background-size: 100%;
 }
