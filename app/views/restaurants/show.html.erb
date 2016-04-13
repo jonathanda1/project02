@@ -6,6 +6,7 @@
 </p>
 
 <br>
+
 <p class='col-md-12'> Description: <%=@restaurant.description %>
 </p>
 
@@ -24,28 +25,25 @@
 
 <h2> Comments </h2>
 
-<p>   <% @restaurant.comments.each do |comment| %> </p>
-            <p> <%= comment.user.username %>:
-                <%= comment.content %>
-                <% if comment.image.present? %>
-                <%= image_tag comment.image.url(:medium) %>
-                <% end %>
-            <small>   <%= link_to 'View comment', comment %></small> </p>
-                <% end %>
+    <% @restaurant.comments.each do |comment| %>
+    <p><%= comment.user.username %>:
+       <%= comment.content %>
+       <% if comment.image.present? %>
+       <%= image_tag comment.image.url(:medium) %>
+       <% end %>
+       <small><%= link_to 'View comment', comment %></small> </p>
+       <% end %>
 
 
-      <%= form_for @restaurant.comments.build do |f| %>
+       <%= form_for @restaurant.comments.build do |f| %>
                 <%= f.hidden_field :restaurant_id %>
 
     <div>
-        <%= f.label :content %>
-        <%= f.text_field :content %>
-        <%= f.file_field :image %>
+       <%= f.label :content %>
+       <%= f.text_field :content %>
+       <%= f.file_field :image %>
     </div>
-
-
-
-    <%= f.submit "Comment" %>
+       <%= f.submit "Comment" %>
 
 <% end %>
 

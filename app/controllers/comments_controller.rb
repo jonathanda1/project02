@@ -50,7 +50,7 @@ private
   end
 
   def only_my_comments
-      redirect_to root_path, notice: "you can only edit your own comments" if (current_user != @comment.user)
+      redirect_to root_path, notice: "You can only alter your own comments." if (current_user != @comment.user)
   end
 
 
