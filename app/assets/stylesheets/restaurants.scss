@@ -3,8 +3,6 @@ background: url('http://kierstenfrase.com/wp-content/uploads/2014/07/il_fullxful
 background-size: 100%;
 }
 
-
-
 body.sessions {
 background: url('http://www.bbc.co.uk/staticarchive/9727e8524c1fb2d60c1011177fd8a6bfd9ff59d5.jpg');
 background-size: 100%;
@@ -43,6 +41,12 @@ body.users {
 .content {
   color: white;
   text-shadow: 1px 1px black;
+}
+
+.alert {
+  text-align: left;
+  font-size: 24px;
+  color: red;
 }
 
 
