@@ -15,7 +15,7 @@
   <br>
                                       <% @restaurants.each do |restaurant| %>
   <p class = 'frontpagerestaurants'>  <%= restaurant.name %>
-                                      <%= link_to 'More Info', restaurant %> </p>
+                               <small><%= link_to 'More Info', restaurant %></small></p>
         <% end %>
 
 </div>

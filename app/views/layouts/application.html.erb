@@ -25,9 +25,9 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class="active"><a href="/">Home<span class="sr-only">(current)</span></a></li>
-        <% if current_user %>
-          <li><p class="navbar-text">Welcome, <%= current_user.username %></p></li>
-        <% end %>
+          <% if current_user %>
+          <li><p class="navbar-text">Welcome back, <%= current_user.username %></p></li>
+          <% end %>
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
