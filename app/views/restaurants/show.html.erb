@@ -25,7 +25,7 @@
 
 <h2> Comments </h2>
 
-    <% @restaurant.comments.each do |comment| %>
+       <% @restaurant.comments.each do |comment| %>
     <p><%= comment.user.username %>:
        <%= comment.content %>
        <% if comment.image.present? %>

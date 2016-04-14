@@ -7,15 +7,15 @@
 <body>
 
   <div class='container'>
-  <h1 class = "col-md-offset-4 col-md-7"> RR.. your Restaurant Review </h1>
+  <h1 class ='col-md-offset-3 col-md-7 title'> RR.. your Restaurant Review </h1>
   <br>
   <br>
   <br>
   <br>
   <br>
-               <% @restaurants.each do |restaurant| %>
-            <p>       <%= restaurant.name %>
-                      <%= link_to 'More Info', restaurant %> </p>
+                                      <% @restaurants.each do |restaurant| %>
+  <p class = 'restaurantnames'>       <%= restaurant.name %>
+                                      <%= link_to 'More Info', restaurant %> </p>
         <% end %>
 
 </div>
