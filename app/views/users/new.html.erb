@@ -1,6 +1,7 @@
-<h1 class = 'col-md-offset-3 col-md-6 form-group'>Register User</h1>
+<div class='container'>
+  <h1 class = 'col-md-offset-3 col-md-6 form-group'>Register User</h1>
 
-<%= form_for @user do |f| %>
+    <%= form_for @user do |f| %>
     <% flash.each do |key, msg| %>
         <div><%= msg %></div>
     <% end %>
@@ -28,4 +29,5 @@
   <div class = 'col-md-offset-3 col-md-6'>
    <%= f.submit  "Register" %>
    </div>
-<% end %>
+    <% end %>
+</div>
