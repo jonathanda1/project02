@@ -1,20 +1,21 @@
 <!DOCTYPE HTML>
-<h1> <%= @restaurant.name %> </h1>
+<div class='container'>
+   <div class='bg'>
+        <h1 class='restaurantnames'> <%= @restaurant.name %> </h1>
 
-
-<p class= 'col-md-offset-0 col-md-5'> Located at <%=@restaurant.location %>, <%=@restaurant.name %> serves an <%=@restaurant.cuisine %> cuisine.
-</p>
-
-<br>
-
-<p class='col-md-12'> Description: <%=@restaurant.description %>
-</p>
-
-<div class='col-md-12'><%= link_to "Delete this Restaurant", restaurant_path, method: :delete, data: { confirm: "Are you sure you want to delete this restaurant?"} %></div>
-
-<div class='col-md-12'><%= link_to "Edit this Restaurant", edit_restaurant_path(@restaurant) %></div>
+        <p class= 'col-md-offset-0 col-md-5 restaurant'> Located at <%=@restaurant.location %>, <%=@restaurant.name %> serves an <%=@restaurant.cuisine %> cuisine.
+        </p>
 
 <br>
+
+        <p class='col-md-12 restaurant'> Description: <%=@restaurant.description %>
+        </p>
+
+        <div class='col-md-12'><%= link_to "Delete this Restaurant", restaurant_path, method: :delete, data: { confirm: "Are you sure you want to delete this restaurant?"} %></div>
+
+        <div class='col-md-12'><%= link_to "Edit this Restaurant", edit_restaurant_path(@restaurant) %></div>
+
+<br>
 <br>
 <br>
 <br>
@@ -23,10 +24,10 @@
 <br>
 <br>
 
-<h2> Comments </h2>
+        <h2 class='commenttitle'> Comments </h2>
 
        <% @restaurant.comments.each do |comment| %>
-    <p><%= comment.user.username %>:
+    <p class='content'><%= comment.user.username %>:
        <%= comment.content %>
        <% if comment.image.present? %>
        <%= image_tag comment.image.url(:medium) %>
@@ -38,14 +39,17 @@
        <%= form_for @restaurant.comments.build do |f| %>
                 <%= f.hidden_field :restaurant_id %>
 
-    <div>
+    <div class='col-md-12 form-group'>
        <%= f.label :content %>
-       <%= f.text_field :content %>
+       <%= f.text_field :content, :class => "form-control" %>
        <%= f.file_field :image %>
     </div>
+    <div>
        <%= f.submit "Comment" %>
-
-<% end %>
+    </div>
+        <% end %>
+ </div>
+</div>
 
 
 
